@@ -26,7 +26,6 @@ open class TextViewWithPlaceholder: UITextView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = .clear
         textView.textColor = .placeholderText
-        textView.isScrollEnabled = false
         textView.isUserInteractionEnabled = false
         return textView
     }()
