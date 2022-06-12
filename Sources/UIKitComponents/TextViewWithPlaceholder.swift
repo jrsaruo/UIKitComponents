@@ -23,6 +23,7 @@ open class TextViewWithPlaceholder: UITextView {
     
     private let placeholderTextView: UITextView = {
         let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = .clear
         textView.textColor = .placeholderText
         textView.isScrollEnabled = false
