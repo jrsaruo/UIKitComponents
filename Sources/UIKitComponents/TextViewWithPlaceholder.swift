@@ -58,13 +58,10 @@ open class TextViewWithPlaceholder: UITextView {
         
         // Layout
         NSLayoutConstraint.activate([
-            placeholderTextView.topAnchor.constraint(equalTo: topAnchor),
-            placeholderTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            placeholderTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            placeholderTextView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            placeholderTextView.widthAnchor.constraint(equalTo: frameLayoutGuide.widthAnchor),
-            placeholderTextView.heightAnchor.constraint(equalTo: frameLayoutGuide.heightAnchor),
+            placeholderTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            placeholderTextView.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor),
+            placeholderTextView.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor),
+            placeholderTextView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
