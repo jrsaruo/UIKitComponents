@@ -8,8 +8,12 @@
 import UIKit
 import Combine
 
+/// A scrollable, multiline text region with a placeholder.
 open class TextViewWithPlaceholder: UITextView {
     
+    /// The string that displays when there is no other text in the text view.
+    ///
+    /// This value is `nil` by default. The placeholder string is drawn using a system-defined color.
     open var placeholder: String? {
         get { placeholderTextView.text }
         set { placeholderTextView.text = newValue }
@@ -28,6 +32,10 @@ open class TextViewWithPlaceholder: UITextView {
     
     // MARK: - Initializers
     
+    /// Creates a new text view with the specified text container.
+    /// - Parameters:
+    ///   - frame: The frame rectangle of the text view.
+    ///   - textContainer: The text container to use for the receiver (can be `nil`).
     override public init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         
@@ -35,6 +43,7 @@ open class TextViewWithPlaceholder: UITextView {
         setUpSubscriptions()
     }
     
+    /// Creates a text view from data in an unarchiver.
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
