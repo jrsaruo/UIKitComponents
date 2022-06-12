@@ -31,6 +31,16 @@ open class TextViewWithPlaceholder: UITextView {
         return textView
     }()
     
+    private lazy var placeholderTopBottomToSafeAreaConstraints: [NSLayoutConstraint] = [
+        placeholderTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+        placeholderTextView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor)
+    ]
+    
+    private lazy var placeholderTopBottomToFrameConstraints: [NSLayoutConstraint] = [
+        placeholderTextView.topAnchor.constraint(equalTo: frameLayoutGuide.topAnchor),
+        placeholderTextView.bottomAnchor.constraint(lessThanOrEqualTo: frameLayoutGuide.bottomAnchor)
+    ]
+    
     // MARK: - Initializers
     
     /// Creates a new text view with the specified text container.
@@ -58,10 +68,8 @@ open class TextViewWithPlaceholder: UITextView {
         
         // Layout
         NSLayoutConstraint.activate([
-            placeholderTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             placeholderTextView.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor),
-            placeholderTextView.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor),
-            placeholderTextView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor)
+            placeholderTextView.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor)
         ])
     }
     
@@ -96,6 +104,24 @@ open class TextViewWithPlaceholder: UITextView {
         
         textContainer.publisher(for: \.lineFragmentPadding)
             .assign(to: \.lineFragmentPadding, on: placeholderTextView.textContainer)
+            .store(in: &cancellables)
+        
+        publisher(for: \.contentInsetAdjustmentBehavior)
+            .sink(receiveValue: { [weak self] contentInsetAdjustmentBehavior in
+                guard let self = self else { return }
+                switch contentInsetAdjustmentBehavior {
+                case .automatic, .always:
+                    NSLayoutConstraint.deactivate(self.placeholderTopBottomToFrameConstraints)
+                    NSLayoutConstraint.activate(self.placeholderTopBottomToSafeAreaConstraints)
+                case .scrollableAxes, .never:
+                    NSLayoutConstraint.deactivate(self.placeholderTopBottomToSafeAreaConstraints)
+                    NSLayoutConstraint.activate(self.placeholderTopBottomToFrameConstraints)
+                @unknown default:
+                    assertionFailure("Unknown behavior: \(contentInsetAdjustmentBehavior)")
+                    NSLayoutConstraint.deactivate(self.placeholderTopBottomToFrameConstraints)
+                    NSLayoutConstraint.activate(self.placeholderTopBottomToSafeAreaConstraints)
+                }
+            })
             .store(in: &cancellables)
     }
 }
