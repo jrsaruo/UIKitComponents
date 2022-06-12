@@ -9,7 +9,7 @@ Reusable UI components built with UIKit.
 
 ## Components
 
-### TextViewWithPlaceholder
+### `TextViewWithPlaceholder`
 
 `UITextView` with a placeholder.
 
