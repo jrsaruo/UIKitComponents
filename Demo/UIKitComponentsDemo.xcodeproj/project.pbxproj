@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A04A4C1299E69FC006C8D3B /* UIKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4C0299E69FC006C8D3B /* UIKitComponents */; };
 		5A56502E299E66CF00C2FD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502D299E66CF00C2FD4A /* AppDelegate.swift */; };
 		5A565030299E66CF00C2FD4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502F299E66CF00C2FD4A /* SceneDelegate.swift */; };
 		5A565032299E66CF00C2FD4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A565031299E66CF00C2FD4A /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		5A565036299E66D000C2FD4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A565039299E66D000C2FD4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A56503B299E66D000C2FD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A565047299E69AF00C2FD4A /* UIKitComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UIKitComponents; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A565043299E694000C2FD4A /* UIKitEssentials in Frameworks */,
+				5A04A4C1299E69FC006C8D3B /* UIKitComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A04A4BF299E69FC006C8D3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5A565021299E66CF00C2FD4A = {
 			isa = PBXGroup;
 			children = (
+				5A565046299E69AF00C2FD4A /* Packages */,
 				5A56502C299E66CF00C2FD4A /* UIKitComponentsDemo */,
 				5A56502B299E66CF00C2FD4A /* Products */,
+				5A04A4BF299E69FC006C8D3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +78,14 @@
 			path = UIKitComponentsDemo;
 			sourceTree = "<group>";
 		};
+		5A565046299E69AF00C2FD4A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5A565047299E69AF00C2FD4A /* UIKitComponents */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -84,6 +104,7 @@
 			name = UIKitComponentsDemo;
 			packageProductDependencies = (
 				5A565042299E693F00C2FD4A /* UIKitEssentials */,
+				5A04A4C0299E69FC006C8D3B /* UIKitComponents */,
 			);
 			productName = UIKitComponentsDemo;
 			productReference = 5A56502A299E66CF00C2FD4A /* UIKitComponentsDemo.app */;
@@ -363,6 +384,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A04A4C0299E69FC006C8D3B /* UIKitComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIKitComponents;
+		};
 		5A565042299E693F00C2FD4A /* UIKitEssentials */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A565041299E693F00C2FD4A /* XCRemoteSwiftPackageReference "UIKitEssentials" */;
