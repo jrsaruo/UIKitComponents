@@ -10,10 +10,6 @@ import SwiftyTable
 
 final class TopViewController: UIViewController {
     
-    enum Sample: Int, TableRow, CaseIterable {
-        case sample
-    }
-    
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(UITableViewCell.self)
@@ -22,12 +18,16 @@ final class TopViewController: UIViewController {
     
     private lazy var dataSource = UITableViewDiffableDataSource<Int, Sample>(tableView: tableView) { tableView, indexPath, sample in
         let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
+        var configuration = cell.defaultContentConfiguration()
+        configuration.text = sample.title
+        cell.contentConfiguration = configuration
         return cell
     }
     
     // MARK: - Lifecycle
     
     override func loadView() {
+        tableView.delegate = self
         view = tableView
     }
     
@@ -43,5 +43,41 @@ final class TopViewController: UIViewController {
         snapshot.appendSections([0])
         snapshot.appendItems(Sample.allCases)
         dataSource.apply(snapshot)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.deselectSelectedRow(with: transitionCoordinator, animated: animated)
+    }
+}
+
+// MARK: - UITableViewDelegate -
+
+extension TopViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sample = dataSource.itemIdentifier(for: indexPath)!
+        navigationController?.pushViewController(sample.destination, animated: true)
+    }
+}
+
+extension TopViewController {
+    
+    enum Sample: Int, TableRow, CaseIterable {
+        case textViewWithPlaceholder
+        
+        var title: String {
+            switch self {
+            case .textViewWithPlaceholder:
+                return "TextViewWithPlaceholder"
+            }
+        }
+        
+        var destination: UIViewController {
+            switch self {
+            case .textViewWithPlaceholder:
+                return UIViewController()
+            }
+        }
     }
 }
