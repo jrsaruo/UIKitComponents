@@ -12,6 +12,7 @@
 		5A04A4C7299E6B8F006C8D3B /* SwiftyTable in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4C6299E6B8F006C8D3B /* SwiftyTable */; };
 		5A04A4CA299E701F006C8D3B /* TextViewWithPlaceholderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A4C9299E701F006C8D3B /* TextViewWithPlaceholderSampleViewController.swift */; };
 		5A04A4CC299E7029006C8D3B /* TextViewWithPlaceholderSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A4CB299E7029006C8D3B /* TextViewWithPlaceholderSampleView.swift */; };
+		5A04A4CF299E70E3006C8D3B /* AceLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4CE299E70E3006C8D3B /* AceLayout */; };
 		5A56502E299E66CF00C2FD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502D299E66CF00C2FD4A /* AppDelegate.swift */; };
 		5A565030299E66CF00C2FD4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502F299E66CF00C2FD4A /* SceneDelegate.swift */; };
 		5A565037299E66D000C2FD4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A565036299E66D000C2FD4A /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A04A4CF299E70E3006C8D3B /* AceLayout in Frameworks */,
 				5A565043299E694000C2FD4A /* UIKitEssentials in Frameworks */,
 				5A04A4C7299E6B8F006C8D3B /* SwiftyTable in Frameworks */,
 				5A04A4C1299E69FC006C8D3B /* UIKitComponents in Frameworks */,
@@ -122,6 +124,7 @@
 				5A565042299E693F00C2FD4A /* UIKitEssentials */,
 				5A04A4C0299E69FC006C8D3B /* UIKitComponents */,
 				5A04A4C6299E6B8F006C8D3B /* SwiftyTable */,
+				5A04A4CE299E70E3006C8D3B /* AceLayout */,
 			);
 			productName = UIKitComponentsDemo;
 			productReference = 5A56502A299E66CF00C2FD4A /* UIKitComponentsDemo.app */;
@@ -154,6 +157,7 @@
 			packageReferences = (
 				5A565041299E693F00C2FD4A /* XCRemoteSwiftPackageReference "UIKitEssentials" */,
 				5A04A4C5299E6B8F006C8D3B /* XCRemoteSwiftPackageReference "SwiftyTable" */,
+				5A04A4CD299E70E3006C8D3B /* XCRemoteSwiftPackageReference "AceLayout" */,
 			);
 			productRefGroup = 5A56502B299E66CF00C2FD4A /* Products */;
 			projectDirPath = "";
@@ -401,6 +405,14 @@
 				minimumVersion = 2.0.1;
 			};
 		};
+		5A04A4CD299E70E3006C8D3B /* XCRemoteSwiftPackageReference "AceLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrsaruo/AceLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5A565041299E693F00C2FD4A /* XCRemoteSwiftPackageReference "UIKitEssentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrsaruo/UIKitEssentials";
@@ -420,6 +432,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A04A4C5299E6B8F006C8D3B /* XCRemoteSwiftPackageReference "SwiftyTable" */;
 			productName = SwiftyTable;
+		};
+		5A04A4CE299E70E3006C8D3B /* AceLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A04A4CD299E70E3006C8D3B /* XCRemoteSwiftPackageReference "AceLayout" */;
+			productName = AceLayout;
 		};
 		5A565042299E693F00C2FD4A /* UIKitEssentials */ = {
 			isa = XCSwiftPackageProductDependency;
