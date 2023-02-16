@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A04A4C1299E69FC006C8D3B /* UIKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4C0299E69FC006C8D3B /* UIKitComponents */; };
+		5A04A4C7299E6B8F006C8D3B /* SwiftyTable in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4C6299E6B8F006C8D3B /* SwiftyTable */; };
 		5A56502E299E66CF00C2FD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502D299E66CF00C2FD4A /* AppDelegate.swift */; };
 		5A565030299E66CF00C2FD4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502F299E66CF00C2FD4A /* SceneDelegate.swift */; };
 		5A565032299E66CF00C2FD4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A565031299E66CF00C2FD4A /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A565043299E694000C2FD4A /* UIKitEssentials in Frameworks */,
+				5A04A4C7299E6B8F006C8D3B /* SwiftyTable in Frameworks */,
 				5A04A4C1299E69FC006C8D3B /* UIKitComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +107,7 @@
 			packageProductDependencies = (
 				5A565042299E693F00C2FD4A /* UIKitEssentials */,
 				5A04A4C0299E69FC006C8D3B /* UIKitComponents */,
+				5A04A4C6299E6B8F006C8D3B /* SwiftyTable */,
 			);
 			productName = UIKitComponentsDemo;
 			productReference = 5A56502A299E66CF00C2FD4A /* UIKitComponentsDemo.app */;
@@ -136,6 +139,7 @@
 			mainGroup = 5A565021299E66CF00C2FD4A;
 			packageReferences = (
 				5A565041299E693F00C2FD4A /* XCRemoteSwiftPackageReference "UIKitEssentials" */,
+				5A04A4C5299E6B8F006C8D3B /* XCRemoteSwiftPackageReference "SwiftyTable" */,
 			);
 			productRefGroup = 5A56502B299E66CF00C2FD4A /* Products */;
 			projectDirPath = "";
@@ -373,6 +377,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A04A4C5299E6B8F006C8D3B /* XCRemoteSwiftPackageReference "SwiftyTable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrsaruo/SwiftyTable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 		5A565041299E693F00C2FD4A /* XCRemoteSwiftPackageReference "UIKitEssentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrsaruo/UIKitEssentials";
@@ -387,6 +399,11 @@
 		5A04A4C0299E69FC006C8D3B /* UIKitComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIKitComponents;
+		};
+		5A04A4C6299E6B8F006C8D3B /* SwiftyTable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A04A4C5299E6B8F006C8D3B /* XCRemoteSwiftPackageReference "SwiftyTable" */;
+			productName = SwiftyTable;
 		};
 		5A565042299E693F00C2FD4A /* UIKitEssentials */ = {
 			isa = XCSwiftPackageProductDependency;

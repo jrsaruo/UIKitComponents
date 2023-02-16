@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "swiftytable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jrsaruo/SwiftyTable",
+      "state" : {
+        "revision" : "f7a9234eb4d4fe99cd5b5fc431c76597278d5e0a",
+        "version" : "2.0.1"
+      }
+    },
+    {
       "identity" : "uikitessentials",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jrsaruo/UIKitEssentials",
