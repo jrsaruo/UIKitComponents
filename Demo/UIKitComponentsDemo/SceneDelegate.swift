@@ -22,7 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window!.rootViewController = rootVC
         window!.makeKeyAndVisible()
         
-        rootVC.transition(to: ViewController(), animated: false)
+        let topVC = TopViewController()
+        let navigationController = UINavigationController(rootViewController: topVC)
+        rootVC.transition(to: navigationController, animated: false)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
