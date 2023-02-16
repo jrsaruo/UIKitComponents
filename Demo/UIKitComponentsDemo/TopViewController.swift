@@ -76,7 +76,7 @@ extension TopViewController {
         var destination: UIViewController {
             switch self {
             case .textViewWithPlaceholder:
-                return UIViewController()
+                return TextViewWithPlaceholderSampleViewController()
             }
         }
     }
