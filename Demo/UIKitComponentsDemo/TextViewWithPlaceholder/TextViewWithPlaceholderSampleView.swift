@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import AceLayout
+import UIKitComponents
 
 final class TextViewWithPlaceholderSampleView: UIView {
+    
+    private let textView: TextViewWithPlaceholder = {
+        let textView = TextViewWithPlaceholder()
+        textView.placeholder = "Some Placeholder"
+        textView.font = .preferredFont(forTextStyle: .body)
+        return textView
+    }()
     
     // MARK: - Initializers
     
@@ -23,5 +32,13 @@ final class TextViewWithPlaceholderSampleView: UIView {
     
     private func setUpViews() {
         backgroundColor = .systemBackground
+        
+        // Subviews
+        addSubview(textView)
+        
+        // Layout
+        textView.autoLayout { item in
+            item.edges.equalToSuperview()
+        }
     }
 }
