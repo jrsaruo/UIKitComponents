@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "uikitessentials",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jrsaruo/UIKitEssentials",
+      "state" : {
+        "revision" : "7e2a3e135dee4aa7c57addf39b7d5b985bd73247",
+        "version" : "1.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}
