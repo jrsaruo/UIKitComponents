@@ -38,7 +38,9 @@ final class TextViewWithPlaceholderSampleView: UIView {
         
         // Layout
         textView.autoLayout { item in
-            item.edges.equalToSuperview()
+            item.top.equalToSuperview()
+            item.leadingTrailing.equalToSuperview()
+            item.bottom.equal(to: keyboardLayoutGuide.topAnchor)
         }
     }
 }

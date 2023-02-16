@@ -27,6 +27,7 @@ open class TextViewWithPlaceholder: UITextView {
         textView.backgroundColor = .clear
         textView.textColor = .placeholderText
         textView.isUserInteractionEnabled = false
+        textView.isScrollEnabled = false
         return textView
     }()
     
