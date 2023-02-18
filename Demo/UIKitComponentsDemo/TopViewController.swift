@@ -18,6 +18,7 @@ final class TopViewController: UIViewController {
     
     private lazy var dataSource = UITableViewDiffableDataSource<Int, Sample>(tableView: tableView) { tableView, indexPath, sample in
         let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         var configuration = cell.defaultContentConfiguration()
         configuration.text = sample.title
         cell.contentConfiguration = configuration
