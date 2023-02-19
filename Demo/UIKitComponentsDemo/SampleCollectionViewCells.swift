@@ -133,5 +133,8 @@ final class TextViewWithPlaceholderSampleCell: SampleCollectionViewCell {
             item.width.equal(to: 2)
             item.height.equal(to: 18)
         }
+        
+        // Configuration
+        configure(title: "TextViewWithPlaceholder")
     }
 }

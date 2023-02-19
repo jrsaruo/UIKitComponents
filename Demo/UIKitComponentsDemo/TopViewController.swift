@@ -35,14 +35,15 @@ final class TopViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.contentInset.top = 16
-        collectionView.register(SampleCollectionViewCell.self)
+        collectionView.register(TextViewWithPlaceholderSampleCell.self)
         return collectionView
     }()
     
     private lazy var dataSource = UICollectionViewDiffableDataSource<Int, Sample>(collectionView: collectionView) { collectionView, indexPath, sample in
-        let cell = collectionView.dequeueReusableCell(of: SampleCollectionViewCell.self, for: indexPath)
-        cell.configure(title: sample.title)
-        return cell
+        switch sample {
+        case .textViewWithPlaceholder:
+            return collectionView.dequeueReusableCell(of: TextViewWithPlaceholderSampleCell.self, for: indexPath)
+        }
     }
     
     // MARK: - Lifecycle
@@ -86,13 +87,6 @@ extension TopViewController {
     
     enum Sample: Int, CollectionItem, CaseIterable {
         case textViewWithPlaceholder
-        
-        var title: String {
-            switch self {
-            case .textViewWithPlaceholder:
-                return "TextViewWithPlaceholder"
-            }
-        }
         
         var destination: UIViewController {
             switch self {
