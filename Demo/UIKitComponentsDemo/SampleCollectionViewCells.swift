@@ -7,8 +7,11 @@
 
 import UIKit
 import AceLayout
+import UIKitComponents
 
-final class SampleCollectionViewCell: UICollectionViewCell {
+// MARK: - SampleCollectionViewCell -
+
+class SampleCollectionViewCell: UICollectionViewCell {
     
     private let thumbnailView: UIView = {
         let view = UIView()
@@ -20,7 +23,7 @@ final class SampleCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
-        label.font = .preferredFont(forTextStyle: .headline)
+        label.font = .monospacedSystemFont(ofSize: 15, weight: .semibold)
         label.textColor = .white
         return label
     }()
@@ -37,7 +40,7 @@ final class SampleCollectionViewCell: UICollectionViewCell {
         setUpViews()
     }
     
-    private func setUpViews() {
+    func setUpViews() {
         preservesSuperviewLayoutMargins = true
         backgroundColor = .secondarySystemGroupedBackground
         layer.cornerCurve = .continuous
@@ -81,13 +84,54 @@ final class SampleCollectionViewCell: UICollectionViewCell {
         titleLabel.autoLayout { item in
             item.leading.equal(to: labelArea.layoutMarginsGuide)
             item.trailing.lessThanOrEqual(to: labelArea.layoutMarginsGuide)
-            item.topBottom.equal(to: labelArea, insetBy: 12)
+            item.topBottom.equal(to: labelArea, insetBy: 10)
         }
     }
     
     // MARK: - Methods
     
-    func configure(title: String) {
+    fileprivate func configure(title: String) {
         titleLabel.text = title
+    }
+    
+    fileprivate func addThumbnail(_ thumbnail: UIView) {
+        thumbnail.isUserInteractionEnabled = false
+        thumbnailView.addSubview(thumbnail)
+        thumbnail.autoLayout { item in
+            item.edges.equal(to: thumbnailView.layoutMarginsGuide)
+        }
+    }
+}
+
+// MARK: - TextViewWithPlaceholderSampleCell -
+
+final class TextViewWithPlaceholderSampleCell: SampleCollectionViewCell {
+    
+    override func setUpViews() {
+        super.setUpViews()
+        
+        // Subviews
+        let textView = TextViewWithPlaceholder()
+        textView.backgroundColor = .systemGray6
+        textView.placeholder = "Placeholder"
+        textView.font = .systemFont(ofSize: 15)
+        textView.textContainerInset.left = 3
+        textView.layer.cornerCurve = .continuous
+        textView.layer.cornerRadius = 8
+        textView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        textView.layer.masksToBounds = true
+        addThumbnail(textView)
+        
+        let caret = UIView()
+        caret.backgroundColor = UIColor.tintColor
+        textView.addSubview(caret)
+        
+        // Layout
+        caret.autoLayout { item in
+            item.top.equal(to: textView.layoutMarginsGuide)
+            item.trailing.equal(to: textView.layoutMarginsGuide.leadingAnchor)
+            item.width.equal(to: 2)
+            item.height.equal(to: 18)
+        }
     }
 }
