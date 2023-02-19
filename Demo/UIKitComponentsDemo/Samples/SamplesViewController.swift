@@ -1,5 +1,5 @@
 //
-//  TopViewController.swift
+//  SamplesViewController.swift
 //  UIKitComponentsDemo
 //
 //  Created by Yusaku Nishi on 2023/02/16.
@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyTable
 
-final class TopViewController: UIViewController {
+final class SamplesViewController: UIViewController {
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
@@ -75,7 +75,7 @@ final class TopViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate -
 
-extension TopViewController: UICollectionViewDelegate {
+extension SamplesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sample = dataSource.itemIdentifier(for: indexPath)!
@@ -83,7 +83,7 @@ extension TopViewController: UICollectionViewDelegate {
     }
 }
 
-extension TopViewController {
+extension SamplesViewController {
     
     enum Sample: Int, CollectionItem, CaseIterable {
         case textViewWithPlaceholder
