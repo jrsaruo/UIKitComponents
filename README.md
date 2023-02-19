@@ -30,7 +30,7 @@ textView.textContainer.lineFragmentPadding = 0
 To use the `UIKitComponents` library in a SwiftPM project, add the following line to the dependencies in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/jrsaruo/UIKitComponents", from: "1.0.2"),
+.package(url: "https://github.com/jrsaruo/UIKitComponents", from: "1.0.3"),
 ```
 
 and add `UIKitComponents` as a dependency for your target:
