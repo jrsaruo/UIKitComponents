@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5A04A4C1299E69FC006C8D3B /* UIKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4C0299E69FC006C8D3B /* UIKitComponents */; };
-		5A04A4C4299E6B00006C8D3B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A4C3299E6B00006C8D3B /* TopViewController.swift */; };
+		5A04A4C4299E6B00006C8D3B /* SamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A4C3299E6B00006C8D3B /* SamplesViewController.swift */; };
 		5A04A4C7299E6B8F006C8D3B /* SwiftyTable in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4C6299E6B8F006C8D3B /* SwiftyTable */; };
 		5A04A4CA299E701F006C8D3B /* TextViewWithPlaceholderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A4C9299E701F006C8D3B /* TextViewWithPlaceholderSampleViewController.swift */; };
 		5A04A4CC299E7029006C8D3B /* TextViewWithPlaceholderSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A4CB299E7029006C8D3B /* TextViewWithPlaceholderSampleView.swift */; };
 		5A04A4CF299E70E3006C8D3B /* AceLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5A04A4CE299E70E3006C8D3B /* AceLayout */; };
+		5A54611629A1FBC100F16456 /* SampleCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54611529A1FBC100F16456 /* SampleCollectionViewCells.swift */; };
 		5A56502E299E66CF00C2FD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502D299E66CF00C2FD4A /* AppDelegate.swift */; };
 		5A565030299E66CF00C2FD4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56502F299E66CF00C2FD4A /* SceneDelegate.swift */; };
 		5A565037299E66D000C2FD4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A565036299E66D000C2FD4A /* Assets.xcassets */; };
@@ -21,9 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A04A4C3299E6B00006C8D3B /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		5A04A4C3299E6B00006C8D3B /* SamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesViewController.swift; sourceTree = "<group>"; };
 		5A04A4C9299E701F006C8D3B /* TextViewWithPlaceholderSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholderSampleViewController.swift; sourceTree = "<group>"; };
 		5A04A4CB299E7029006C8D3B /* TextViewWithPlaceholderSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholderSampleView.swift; sourceTree = "<group>"; };
+		5A54611529A1FBC100F16456 /* SampleCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCollectionViewCells.swift; sourceTree = "<group>"; };
 		5A56502A299E66CF00C2FD4A /* UIKitComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A56502D299E66CF00C2FD4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A56502F299E66CF00C2FD4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,16 @@
 			path = TextViewWithPlaceholder;
 			sourceTree = "<group>";
 		};
+		5A54611A29A2410B00F16456 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				5A04A4C3299E6B00006C8D3B /* SamplesViewController.swift */,
+				5A54611529A1FBC100F16456 /* SampleCollectionViewCells.swift */,
+				5A04A4C8299E6FFD006C8D3B /* TextViewWithPlaceholder */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
 		5A565021299E66CF00C2FD4A = {
 			isa = PBXGroup;
 			children = (
@@ -87,8 +99,7 @@
 			children = (
 				5A56502D299E66CF00C2FD4A /* AppDelegate.swift */,
 				5A56502F299E66CF00C2FD4A /* SceneDelegate.swift */,
-				5A04A4C3299E6B00006C8D3B /* TopViewController.swift */,
-				5A04A4C8299E6FFD006C8D3B /* TextViewWithPlaceholder */,
+				5A54611A29A2410B00F16456 /* Samples */,
 				5A565036299E66D000C2FD4A /* Assets.xcassets */,
 				5A565038299E66D000C2FD4A /* LaunchScreen.storyboard */,
 				5A56503B299E66D000C2FD4A /* Info.plist */,
@@ -186,9 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A04A4CA299E701F006C8D3B /* TextViewWithPlaceholderSampleViewController.swift in Sources */,
-				5A04A4C4299E6B00006C8D3B /* TopViewController.swift in Sources */,
+				5A04A4C4299E6B00006C8D3B /* SamplesViewController.swift in Sources */,
 				5A56502E299E66CF00C2FD4A /* AppDelegate.swift in Sources */,
 				5A04A4CC299E7029006C8D3B /* TextViewWithPlaceholderSampleView.swift in Sources */,
+				5A54611629A1FBC100F16456 /* SampleCollectionViewCells.swift in Sources */,
 				5A565030299E66CF00C2FD4A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

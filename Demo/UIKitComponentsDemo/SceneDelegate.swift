@@ -22,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window!.rootViewController = rootVC
         window!.makeKeyAndVisible()
         
-        let topVC = TopViewController()
-        let navigationController = UINavigationController(rootViewController: topVC)
+        let samplesVC = SamplesViewController()
+        let navigationController = UINavigationController(rootViewController: samplesVC)
         rootVC.transition(to: navigationController, animated: false)
     }
     
